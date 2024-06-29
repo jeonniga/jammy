@@ -16,9 +16,9 @@ genai.configure(api_key=api_key)
 def get_conversational_chain() -> Any:
     """Returns the conversational chain for QA."""
     prompt_template = """
-    Answer the question as detailed as possible from the provided context. 
-    If the answer is not in the provided context, just say, "answer is not available in the context."
-    Do not provide a wrong answer.
+    제공된 컨텍스트에서 가능한 한 상세하게 질문에 답합니다. 
+    제공된 컨텍스트에 답변이 없으면 "컨텍스트에서 답변을 사용할 수 없습니다."라고 말합니다
+    오답을 제시하지 마십시오.
     
     Context:\n {context}\n
     Question:\n {question}\n
