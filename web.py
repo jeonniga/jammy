@@ -26,6 +26,7 @@ def get_conversational_chain() -> Any:
     """
 
     model = ChatGoogleGenerativeAI(
+        # gemini-1.5-flash-latest
         model="gemini-pro",
         client=genai,
         temperature=0.15,
