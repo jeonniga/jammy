@@ -47,8 +47,7 @@ def clear_chat_history() -> None:
 
 def user_input(user_question: str) -> Tuple[Dict[str, Any], float]:
     """Processes the user input and generates a response."""
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
-    new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
+
     docs = new_db.similarity_search(user_question)
 
     chain = get_conversational_chain()
@@ -102,4 +101,6 @@ def main() -> None:
             st.session_state.messages.append({"role": "assistant", "content": full_response})
 
 if __name__ == "__main__":
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+    new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
     main()
