@@ -77,6 +77,11 @@ def main() -> None:
 
     st.title("Chat with PDF files using Gemini🤖")
     st.write("Welcome to the chat!")
+    st.sidebar.write("추천질문")
+    st.sidebar.write("아래 질문을 입력해 보세요")
+    st.sidebar.write("1.김첨지의 아내가 먹고 싶어하는 음식은?")
+    st.sidebar.write("2.역전앞에서 태운 사람은?")
+    st.sidebar.write("3.마마님이 간 곳은?")
     st.sidebar.button('Clear Chat History', on_click=clear_chat_history)
 
     if "messages" not in st.session_state:
